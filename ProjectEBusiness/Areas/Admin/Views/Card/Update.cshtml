@@ -1,0 +1,38 @@
+﻿@using ProjectEBusiness.DTOs.CardDTOs
+@model CardUpdateDto
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container m-2">
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Basic Form</h6>
+                    <form method="post" enctype="multipart/form-data">
+                        <input hidden asp-for="cardGetDto.Id"></input>
+                        <div class="mb-3">
+                            <label asp-for="@Model.cardPostDto.Name" class="form-label"></label>
+                            <input asp-for="@Model.cardPostDto.Name" value="@Model.cardGetDto.Name" class="form-control">
+                            <span asp-validation-for="@Model.cardPostDto.Name"></span>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="@Model.cardPostDto.Position" class="form-label"></label>
+                            <input asp-for="@Model.cardPostDto.Position" value="@Model.cardGetDto.Position" class="form-control">
+                            <span asp-validation-for="@Model.cardPostDto.Position"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="@Model.cardPostDto.File" class="form-label"></label>
+                            <input asp-for="@Model.cardPostDto.File" class="form-control">
+                            <span asp-validation-for="@Model.cardPostDto.File"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
